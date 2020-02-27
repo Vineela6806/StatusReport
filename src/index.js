@@ -1,12 +1,32 @@
+// Import the React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import StatusView from './StatusView';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Create a react componenet
+const App = function () {
+    return (
+        <div className="ui container comments">
+            <StatusView></StatusView>
+            <CommentDetail author="sam" timeAgo="Today at 4:50PM" comment="Goooood!" />
+            <CommentDetail author="Alex" timeAgo="Today at 6:50PM" comment="Need to work more" />
+            <CommentDetail author="Jane" timeAgo="Today at 5:30PM" comment="I want to learn react" />
+            <CommentDetail author="Jhon" timeAgo="Today at 5:40PM" comment="Nice work!" />
+        </div>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+
+
+
+    );
+};
+
+
+// Take the raect componenet and show it on the screen
+ReactDOM.render(
+    <App />,
+    document.querySelector('#root')
+
+);
